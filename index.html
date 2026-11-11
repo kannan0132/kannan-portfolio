@@ -4,113 +4,529 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#080d18" />
-  <meta name="description" content="Kannan A — aspiring AWS & DevOps Engineer building secure, scalable cloud infrastructure." />
+  <meta name="description" content="Kannan A — aspiring AWS & DevOps Engineer building secure, scalable cloud infrastructure with modern automation." />
   <title>Kannan A | AWS & DevOps Engineer</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Interactive Mouse Spotlight -->
+  <div class="cursor-glow"></div>
+
+  <!-- Fullscreen 3D Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Cyber Preloader -->
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-core">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-logo">K.</div>
+    </div>
+    <div class="loader-status">INITIALIZING SYSTEM...</div>
+  </div>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- Header -->
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Kannan A home"><span class="brand-mark">K<span>.</span></span><span>KANNAN A</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+    <a class="brand" href="#home" aria-label="Kannan A home">
+      <span class="brand-mark">K<span>.</span></span>
+      <span>KANNAN A</span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
       <a class="nav-cta" href="#contact">Let's talk <span>↗</span></a>
     </nav>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> OPEN TO CLOUD & DEVOPS OPPORTUNITIES</div>
+      <div class="hero-copy fade-up">
+        <div class="eyebrow">
+          <span class="status-dot"></span> OPEN TO CLOUD & DEVOPS OPPORTUNITIES
+        </div>
         <p class="hero-kicker">HELLO, I'M</p>
         <h1>Kannan <span>A.</span></h1>
-        <div class="role-line"><span class="role-prefix">I'M AN</span> <span id="rotating-role">AWS & DevOps Engineer</span><span class="cursor">|</span></div>
-        <p class="hero-description">I’m passionate about building secure, scalable, and reliable cloud infrastructure — turning complex systems into dependable solutions.</p>
+        <div class="role-line">
+          <span class="role-prefix">I'M AN</span>
+          <span id="rotating-role">AWS & DevOps Engineer</span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-description">
+          I’m passionate about building secure, scalable, and reliable cloud infrastructure — turning complex systems into dependable, automated solutions.
+        </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">Explore my work <span>↗</span></a>
           <a class="button button-ghost" href="assets/Kannan-A-Resume.pdf" target="_blank" rel="noopener">View résumé <span>↗</span></a>
         </div>
-        <div class="hero-meta"><span><i class="meta-icon">⌖</i> Erode, Tamil Nadu, India</span><span><i class="meta-icon">✉</i> Available for opportunities</span></div>
+        <div class="hero-meta">
+          <span><i class="meta-icon">⌖</i> Erode, Tamil Nadu, India</span>
+          <span><i class="meta-icon">✉</i> Available for opportunities</span>
+        </div>
       </div>
-      <div class="hero-visual">
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="portrait-frame"><img src="assets/kannan-profile.jpg" alt="Portrait of Kannan A" /></div>
-        <div class="floating-card cloud-card"><span class="cloud-icon">☁</span><div><strong>Cloud mindset</strong><small>Build · Automate · Scale</small></div></div>
-        <div class="floating-card aws-card"><span class="aws-symbol">aws</span><div><strong>AWS ecosystem</strong><small>Infrastructure & services</small></div></div>
+
+      <div class="hero-visual fade-up">
+        <!-- 3D Interactive Cyber Core Canvas -->
+        <div class="hero-3d-bg">
+          <canvas id="hero-3d-canvas"></canvas>
+        </div>
+
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+
+        <div class="portrait-frame">
+          <img src="assets/kannan-profile.jpg" alt="Portrait of Kannan A" />
+        </div>
+
+        <div class="floating-card cloud-card tilt-card">
+          <span class="cloud-icon">☁</span>
+          <div>
+            <strong>Cloud mindset</strong>
+            <small>Build · Automate · Scale</small>
+          </div>
+        </div>
+
+        <div class="floating-card aws-card tilt-card">
+          <span class="aws-symbol">aws</span>
+          <div>
+            <strong>AWS ecosystem</strong>
+            <small>Infrastructure & services</small>
+          </div>
+        </div>
+
         <div class="visual-index">01 <span>—</span> CLOUD ENGINEERING</div>
       </div>
-      <a class="scroll-cue" href="#about"><span class="scroll-line"></span> SCROLL TO EXPLORE</a>
+
+      <a class="scroll-cue" href="#about">
+        <span class="scroll-line"></span> SCROLL TO EXPLORE
+      </a>
     </section>
 
+    <!-- About Section -->
     <section class="about section-wrap section-block" id="about">
-      <div class="section-heading"><p class="eyebrow">01 / ABOUT ME</p><h2>Engineering the cloud,<br><span>one layer at a time.</span></h2></div>
-      <div class="about-content">
-        <p class="about-lead">Aspiring <strong>AWS & DevOps Engineer</strong> with hands-on experience in cloud projects involving secure infrastructure deployment, scalable web applications, serverless computing, and infrastructure monitoring.</p>
-        <p class="muted">Familiar with AWS services including EC2, VPC, S3, IAM, Lambda, RDS, CloudWatch, and Auto Scaling. I also work with Linux, Git, Docker, CI/CD concepts, and infrastructure automation tools. I’m eager to keep learning and build infrastructure that is secure, efficient, and dependable.</p>
-        <div class="about-facts"><div><strong>04</strong><span>Featured projects</span></div><div><strong>10+</strong><span>Cloud & DevOps tools</span></div><div><strong>2026</strong><span>Current learning journey</span></div></div>
+      <div class="section-heading fade-up">
+        <p class="eyebrow">01 / ABOUT ME</p>
+        <h2>Engineering the cloud,<br><span>one layer at a time.</span></h2>
+      </div>
+      <div class="about-content fade-up">
+        <p class="about-lead">
+          Aspiring <strong>AWS & DevOps Engineer</strong> with hands-on experience in cloud projects involving secure infrastructure deployment, scalable web applications, serverless computing, and infrastructure monitoring.
+        </p>
+        <p class="muted">
+          Familiar with AWS services including EC2, VPC, S3, IAM, Lambda, RDS, CloudWatch, and Auto Scaling. I also work with Linux, Git, Docker, CI/CD concepts, and infrastructure automation tools. I’m eager to keep learning and build infrastructure that is secure, efficient, and dependable.
+        </p>
+        <div class="about-facts">
+          <div>
+            <strong data-count="04">04</strong>
+            <span>Featured projects</span>
+          </div>
+          <div>
+            <strong data-count="10+">10+</strong>
+            <span>Cloud & DevOps tools</span>
+          </div>
+          <div>
+            <strong data-count="2026">2026</strong>
+            <span>Current learning journey</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="skills-section section-block" id="skills"><div class="section-wrap">
-      <div class="section-heading heading-row"><div><p class="eyebrow">02 / TECH STACK</p><h2>Tools I work <span>with.</span></h2></div><p class="heading-note">A growing toolkit for designing, deploying, and managing modern infrastructure.</p></div>
-      <div class="skills-grid">
-        <article class="skill-card"><div class="skill-top"><span class="skill-number">01</span><span class="skill-symbol">☁</span></div><h3>Cloud — AWS</h3><p>Core cloud services and scalable infrastructure.</p><div class="tags"><span>EC2</span><span>S3</span><span>IAM</span><span>RDS</span><span>ELB</span><span>Auto Scaling</span><span>CloudWatch</span><span>CloudTrail</span><span>SNS</span><span>ECS</span><span>EKS</span></div></article>
-        <article class="skill-card"><div class="skill-top"><span class="skill-number">02</span><span class="skill-symbol">⌘</span></div><h3>Networking</h3><p>Secure network foundations and traffic routing.</p><div class="tags"><span>VPC</span><span>Subnets</span><span>Route Tables</span><span>Internet Gateway</span><span>NAT Gateway</span><span>Security Groups</span></div></article>
-        <article class="skill-card"><div class="skill-top"><span class="skill-number">03</span><span class="skill-symbol">▣</span></div><h3>Containers & CI/CD</h3><p>Container workflows and delivery automation.</p><div class="tags"><span>Docker</span><span>Kubernetes</span><span>Amazon ECS</span><span>Jenkins</span><span>Git</span><span>GitHub</span><span>GitHub Actions</span></div></article>
-        <article class="skill-card"><div class="skill-top"><span class="skill-number">04</span><span class="skill-symbol">⌁</span></div><h3>Automation & Linux</h3><p>Infrastructure as code and system administration.</p><div class="tags"><span>Terraform</span><span>Ansible</span><span>Linux</span><span>User Management</span><span>File Management</span><span>File System</span></div></article>
-      </div>
-    </div></section>
+    <!-- Skills Section -->
+    <section class="skills-section section-block" id="skills">
+      <div class="section-wrap">
+        <div class="section-heading heading-row fade-up">
+          <div>
+            <p class="eyebrow">02 / TECH STACK</p>
+            <h2>Tools I work <span>with.</span></h2>
+          </div>
+          <p class="heading-note">A growing toolkit for designing, deploying, and managing modern cloud infrastructure.</p>
+        </div>
 
+        <div class="skills-grid">
+          <article class="skill-card tilt-card fade-up">
+            <div class="card-inner">
+              <div class="skill-top">
+                <span class="skill-number">01</span>
+                <span class="skill-symbol">☁</span>
+              </div>
+              <h3>Cloud — AWS</h3>
+              <p>Core cloud services and scalable infrastructure.</p>
+              <div class="tags">
+                <span>EC2</span><span>S3</span><span>IAM</span><span>RDS</span>
+                <span>ELB</span><span>Auto Scaling</span><span>CloudWatch</span>
+                <span>CloudTrail</span><span>SNS</span><span>ECS</span><span>EKS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-card tilt-card fade-up">
+            <div class="card-inner">
+              <div class="skill-top">
+                <span class="skill-number">02</span>
+                <span class="skill-symbol">⌘</span>
+              </div>
+              <h3>Networking</h3>
+              <p>Secure network foundations and traffic routing.</p>
+              <div class="tags">
+                <span>VPC</span><span>Subnets</span><span>Route Tables</span>
+                <span>Internet Gateway</span><span>NAT Gateway</span><span>Security Groups</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-card tilt-card fade-up">
+            <div class="card-inner">
+              <div class="skill-top">
+                <span class="skill-number">03</span>
+                <span class="skill-symbol">▣</span>
+              </div>
+              <h3>Containers & CI/CD</h3>
+              <p>Container workflows and delivery automation.</p>
+              <div class="tags">
+                <span>Docker</span><span>Kubernetes</span><span>Amazon ECS</span>
+                <span>Jenkins</span><span>Git</span><span>GitHub</span><span>GitHub Actions</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-card tilt-card fade-up">
+            <div class="card-inner">
+              <div class="skill-top">
+                <span class="skill-number">04</span>
+                <span class="skill-symbol">⌁</span>
+              </div>
+              <h3>Automation & Linux</h3>
+              <p>Infrastructure as code and system administration.</p>
+              <div class="tags">
+                <span>Terraform</span><span>Ansible</span><span>Linux</span>
+                <span>User Management</span><span>File Management</span><span>File System</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
     <section class="projects section-wrap section-block" id="projects">
-      <div class="section-heading heading-row"><div><p class="eyebrow">03 / SELECTED WORK</p><h2>Projects built to <span>scale.</span></h2></div><p class="heading-note">Hands-on cloud architecture, infrastructure monitoring, and application development.</p></div>
+      <div class="section-heading heading-row fade-up">
+        <div>
+          <p class="eyebrow">03 / SELECTED WORK</p>
+          <h2>Projects built to <span>scale.</span></h2>
+        </div>
+        <p class="heading-note">Hands-on cloud architecture, infrastructure monitoring, and application development.</p>
+      </div>
+
       <div class="project-list">
-        <article class="project-card project-featured"><div class="project-visual architecture-visual"><div class="arch-label">AWS CLOUD ARCHITECTURE</div><div class="arch-cloud">☁</div><div class="arch-flow"><span>VPC</span><b>↔</b><span>EC2</span><b>↔</b><span>ALB</span></div><div class="arch-foot"><span>PUBLIC / PRIVATE SUBNETS</span><span>01 — 03</span></div></div><div class="project-info"><div class="project-meta"><span>01 / CLOUD INFRASTRUCTURE</span><span>HIGH AVAILABILITY</span></div><h3>Secure AWS VPC & Scalable Web App Deployment</h3><p>Designed and deployed a secure, scalable AWS web application infrastructure using VPC, public/private subnets, route tables, and NAT Gateway. Configured EC2, Application Load Balancer, Auto Scaling, and Security Groups, with EBS and EFS for persistent and shared storage.</p><div class="tags"><span>VPC</span><span>EC2</span><span>ALB</span><span>Auto Scaling</span><span>EBS</span><span>EFS</span></div></div></article>
-        <article class="project-card"><div class="project-visual tier-visual"><div class="tier-node">PRESENTATION LAYER</div><div class="tier-connector"></div><div class="tier-node">APPLICATION LAYER</div><div class="tier-connector"></div><div class="tier-node">DATABASE LAYER</div><span class="visual-caption">3-TIER DESIGN</span></div><div class="project-info"><div class="project-meta"><span>02 / WEB APPLICATION</span><span>FAULT TOLERANCE</span></div><h3>AWS 3-Tier Scalable Web Application</h3><p>Designed a highly available 3-tier application with separate presentation, application, and database layers. Configured VPC, EC2, ALB, Auto Scaling, and Amazon RDS, with Security Groups and IAM roles to secure communication.</p><div class="tags"><span>Amazon VPC</span><span>EC2</span><span>RDS</span><span>IAM</span><span>ALB</span></div></div></article>
-        <article class="project-card"><div class="project-visual monitor-visual"><div class="monitor-header"><span></span><span></span><span></span><small>INFRASTRUCTURE HEALTH</small></div><div class="metric"><span>CPU UTILIZATION</span><strong>MONITOR</strong><div class="metric-bar"><i></i></div></div><div class="metric"><span>MEMORY & DISK</span><strong>TRACK</strong><div class="metric-bar second"><i></i></div></div><div class="monitor-bottom">CLOUDWATCH / EFS / RDS</div></div><div class="project-info"><div class="project-meta"><span>03 / MONITORING</span><span>OBSERVABILITY</span></div><h3>AWS VPC Infrastructure & Monitoring</h3><p>Implemented a secure AWS VPC architecture using 192.168.1.0/24 CIDR, multiple subnets, two EC2 instances, Amazon RDS MySQL, EFS, and an Application Load Balancer. Configured CloudWatch monitoring for CPU, memory, and disk utilization.</p><div class="tags"><span>CloudWatch</span><span>EC2</span><span>RDS MySQL</span><span>EFS</span><span>VPC</span></div></div></article>
-        <article class="project-card"><div class="project-visual cyber-visual"><div class="cyber-shield">⌑</div><div class="cyber-lines"><span>REPORT</span><span>TRACK</span><span>RESPOND</span></div><span class="visual-caption">DIGITAL RESPONSE WORKFLOW</span></div><div class="project-info"><div class="project-meta"><span>04 / WEB APPLICATION</span><span>PUBLIC SERVICE</span></div><h3>Cyber Crime Response System</h3><p>Developed an online platform for reporting cybercrime incidents and managing complaints. Designed a user-friendly interface and digital workflow to support complaint submission, tracking, and response management.</p><div class="tags"><span>Web Development</span><span>UI Design</span><span>Reporting Workflow</span></div></div></article>
+        <!-- Project 1: Featured -->
+        <article class="project-card project-featured tilt-card fade-up">
+          <div class="project-visual architecture-visual">
+            <div class="arch-label">AWS CLOUD ARCHITECTURE</div>
+            <div class="arch-cloud">☁</div>
+            <div class="arch-flow">
+              <span>VPC</span>
+              <b>↔</b>
+              <span>EC2</span>
+              <b>↔</b>
+              <span>ALB</span>
+            </div>
+            <div class="arch-foot">
+              <span>PUBLIC / PRIVATE SUBNETS</span>
+              <span>01 — 03</span>
+            </div>
+          </div>
+          <div class="project-info card-inner">
+            <div class="project-meta">
+              <span>01 / CLOUD INFRASTRUCTURE</span>
+              <span>HIGH AVAILABILITY</span>
+            </div>
+            <h3>Secure AWS VPC & Scalable Web App Deployment</h3>
+            <p>Designed and deployed a secure, scalable AWS web application infrastructure using VPC, public/private subnets, route tables, and NAT Gateway. Configured EC2, Application Load Balancer, Auto Scaling, and Security Groups, with EBS and EFS for persistent and shared storage.</p>
+            <div class="tags">
+              <span>VPC</span><span>EC2</span><span>ALB</span><span>Auto Scaling</span><span>EBS</span><span>EFS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card tilt-card fade-up">
+          <div class="project-visual tier-visual">
+            <div class="tier-node">PRESENTATION LAYER</div>
+            <div class="tier-connector"></div>
+            <div class="tier-node">APPLICATION LAYER</div>
+            <div class="tier-connector"></div>
+            <div class="tier-node">DATABASE LAYER</div>
+            <span class="visual-caption">3-TIER DESIGN</span>
+          </div>
+          <div class="project-info card-inner">
+            <div class="project-meta">
+              <span>02 / WEB APPLICATION</span>
+              <span>FAULT TOLERANCE</span>
+            </div>
+            <h3>AWS 3-Tier Scalable Web Application</h3>
+            <p>Designed a highly available 3-tier application with separate presentation, application, and database layers. Configured VPC, EC2, ALB, Auto Scaling, and Amazon RDS, with Security Groups and IAM roles to secure communication.</p>
+            <div class="tags">
+              <span>Amazon VPC</span><span>EC2</span><span>RDS</span><span>IAM</span><span>ALB</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card tilt-card fade-up">
+          <div class="project-visual monitor-visual">
+            <div class="monitor-header">
+              <span></span><span></span><span></span>
+              <small>INFRASTRUCTURE HEALTH</small>
+            </div>
+            <div class="metric">
+              <span>CPU UTILIZATION</span>
+              <strong>MONITOR</strong>
+              <div class="metric-bar"><i></i></div>
+            </div>
+            <div class="metric">
+              <span>MEMORY & DISK</span>
+              <strong>TRACK</strong>
+              <div class="metric-bar second"><i></i></div>
+            </div>
+            <div class="monitor-bottom">CLOUDWATCH / EFS / RDS</div>
+          </div>
+          <div class="project-info card-inner">
+            <div class="project-meta">
+              <span>03 / MONITORING</span>
+              <span>OBSERVABILITY</span>
+            </div>
+            <h3>AWS VPC Infrastructure & Monitoring</h3>
+            <p>Implemented a secure AWS VPC architecture using 192.168.1.0/24 CIDR, multiple subnets, two EC2 instances, Amazon RDS MySQL, EFS, and an Application Load Balancer. Configured CloudWatch monitoring for CPU, memory, and disk utilization.</p>
+            <div class="tags">
+              <span>CloudWatch</span><span>EC2</span><span>RDS MySQL</span><span>EFS</span><span>VPC</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card tilt-card fade-up">
+          <div class="project-visual cyber-visual">
+            <div class="cyber-shield">⌑</div>
+            <div class="cyber-lines">
+              <span>REPORT</span><span>TRACK</span><span>RESPOND</span>
+            </div>
+            <span class="visual-caption">DIGITAL RESPONSE WORKFLOW</span>
+          </div>
+          <div class="project-info card-inner">
+            <div class="project-meta">
+              <span>04 / WEB APPLICATION</span>
+              <span>PUBLIC SERVICE</span>
+            </div>
+            <h3>Cyber Crime Response System</h3>
+            <p>Developed an online platform for reporting cybercrime incidents and managing complaints. Designed a user-friendly interface and digital workflow to support complaint submission, tracking, and response management.</p>
+            <div class="tags">
+              <span>Web Development</span><span>UI Design</span><span>Reporting Workflow</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="journey-section section-block" id="journey"><div class="section-wrap">
-      <div class="section-heading"><p class="eyebrow">04 / THE JOURNEY</p><h2>Learning. Building. <span>Growing.</span></h2></div>
-      <div class="journey-grid"><div class="timeline">
-        <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-date">2026 — PRESENT</div><h3>AWS & DevOps Course <span>· QSpiders</span></h3><p>Hands-on learning across AWS services, VPC networking, Linux administration, Git, GitHub, Jenkins, Docker, Kubernetes, CI/CD, Terraform, and Ansible.</p></article>
-        <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-date">2026</div><h3>Web Development Intern <span>· Zentrixa Technologies</span></h3><p>Gained practical exposure to website design and development, creating and styling web pages and building responsive, user-friendly interfaces.</p></article>
-        <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-date">2023 — 2026</div><h3>B.Sc. Information Technology <span>· Kongu Arts and Science College</span></h3><p>Kongu Arts and Science College (Autonomous), Erode.</p></article>
-      </div><aside class="recognition"><p class="eyebrow">RECOGNITION</p><h3>A little recognition<br>along the way.</h3><div class="award"><span>02</span><div><strong>2nd Place</strong><small>Website Creation Competition · Inter-department Fest</small></div></div><div class="award"><span>01</span><div><strong>1st Place</strong><small>Quiz Competition · Inter-department Fest</small></div></div><div class="award"><span>03</span><div><strong>3rd Place</strong><small>Memes Creation Competition · Cyber Club</small></div></div></aside></div>
-      <div class="certifications"><p class="eyebrow">CERTIFICATIONS & LEARNING</p><div class="cert-list">
-        <a class="cert-item" href="assets/certifications/AWS cloud practitoner essentials.pdf" target="_blank" rel="noopener">AWS Cloud Practitioner Essentials <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Technical Essentials.pdf" target="_blank" rel="noopener">AWS Technical Essentials <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Networking Basics.pdf" target="_blank" rel="noopener">AWS Networking Basics <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS  Network Infrastructure.pdf" target="_blank" rel="noopener">AWS Network Infrastructure <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Network Firewall Getting Started.pdf" target="_blank" rel="noopener">AWS Network Firewall – Getting Started <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Compute Services Overview.pdf" target="_blank" rel="noopener">AWS Compute Services Overview <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Security Fundamentals.pdf" target="_blank" rel="noopener">AWS Security Fundamentals <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Block Storage Services Getting Started.pdf" target="_blank" rel="noopener">AWS Block Storage Services – Getting Started <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/AWS Object Storage Services Getting Started.pdf" target="_blank" rel="noopener">AWS Object Storage Services – Getting Started <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Amazon EC2 Basics.pdf" target="_blank" rel="noopener">Amazon EC2 Basics <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Build with Amazon EC2.pdf" target="_blank" rel="noopener">Build with Amazon EC2 <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Amazon S3 Getting Started.pdf" target="_blank" rel="noopener">Amazon S3 – Getting Started <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Amazon RDS Service Primer.pdf" target="_blank" rel="noopener">Amazon RDS Service Primer <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Amazon CloudWatch Getting Started.pdf" target="_blank" rel="noopener">Amazon CloudWatch – Getting Started <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Amazon Simple Notification Service (Amazon SNS) - Troubleshooting.pdf" target="_blank" rel="noopener">Amazon SNS – Troubleshooting <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Application Load Balancer Getting Started.pdf" target="_blank" rel="noopener">Application Load Balancer – Getting Started <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Elastic Load Balancing (ELB) - Troubleshooting.pdf" target="_blank" rel="noopener">Elastic Load Balancing (ELB) – Troubleshooting <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Getting Started with AWS Auto Scaling.pdf" target="_blank" rel="noopener">Getting Started with AWS Auto Scaling <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Deep Dive with Security AWS Identity and Access Management (IAM).pdf" target="_blank" rel="noopener">Deep Dive: AWS IAM Security <small>AWS Training & Certification</small></a>
-        <a class="cert-item" href="assets/certifications/github.pdf" target="_blank" rel="noopener">Git & GitHub <small>Certification</small></a>
-        <a class="cert-item" href="assets/certifications/React js.pdf" target="_blank" rel="noopener">React.js <small>Certification</small></a>
-        <a class="cert-item" href="assets/certifications/Web developer intern.jpeg" target="_blank" rel="noopener">Web Development Internship <small>Zentrixa Technologies</small></a>
-      </div></div>
-    </div></section>
+    <!-- Journey Section -->
+    <section class="journey-section section-block" id="journey">
+      <div class="section-wrap">
+        <div class="section-heading fade-up">
+          <p class="eyebrow">04 / THE JOURNEY</p>
+          <h2>Learning. Building. <span>Growing.</span></h2>
+        </div>
 
-    <section class="contact-section section-wrap section-block" id="contact"><div class="contact-panel"><div><p class="eyebrow">05 / GET IN TOUCH</p><h2>Have a cloud challenge<br>in mind? <span>Let's connect.</span></h2><p class="contact-copy">I’m interested in opportunities to learn, contribute, and grow in AWS and DevOps engineering.</p></div><div class="contact-links"><a href="mailto:kannanashokkumar19@gmail.com"><span>Email me</span><strong>kannanashokkumar19@gmail.com ↗</strong></a><a href="tel:+918838319694"><span>Call me</span><strong>+91 8838319694 ↗</strong></a><a href="assets/Kannan-A-Resume.pdf" target="_blank" rel="noopener"><span>Want the details?</span><strong>View my résumé ↗</strong></a></div></div></section>
+        <div class="journey-grid">
+          <div class="timeline fade-up">
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-date">2026 — PRESENT</div>
+              <h3>AWS & DevOps Course <span>· QSpiders</span></h3>
+              <p>Hands-on learning across AWS services, VPC networking, Linux administration, Git, GitHub, Jenkins, Docker, Kubernetes, CI/CD, Terraform, and Ansible.</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-date">2026</div>
+              <h3>Web Development Intern <span>· Zentrixa Technologies</span></h3>
+              <p>Gained practical exposure to website design and development, creating and styling web pages and building responsive, user-friendly interfaces.</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-date">2023 — 2026</div>
+              <h3>B.Sc. Information Technology <span>· Kongu Arts and Science College</span></h3>
+              <p>Kongu Arts and Science College (Autonomous), Erode.</p>
+            </article>
+          </div>
+
+          <aside class="recognition tilt-card fade-up">
+            <div class="card-inner">
+              <p class="eyebrow">RECOGNITION</p>
+              <h3>A little recognition<br>along the way.</h3>
+              <div class="award">
+                <span>02</span>
+                <div>
+                  <strong>2nd Place</strong>
+                  <small>Website Creation Competition · Inter-department Fest</small>
+                </div>
+              </div>
+              <div class="award">
+                <span>01</span>
+                <div>
+                  <strong>1st Place</strong>
+                  <small>Quiz Competition · Inter-department Fest</small>
+                </div>
+              </div>
+              <div class="award">
+                <span>03</span>
+                <div>
+                  <strong>3rd Place</strong>
+                  <small>Memes Creation Competition · Cyber Club</small>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Certifications List -->
+        <div class="certifications fade-up">
+          <p class="eyebrow">CERTIFICATIONS & LEARNING</p>
+          <div class="cert-list">
+            <a class="cert-item" href="assets/certifications/AWS cloud practitoner essentials.pdf" target="_blank" rel="noopener">
+              AWS Cloud Practitioner Essentials <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Technical Essentials.pdf" target="_blank" rel="noopener">
+              AWS Technical Essentials <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Networking Basics.pdf" target="_blank" rel="noopener">
+              AWS Networking Basics <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS  Network Infrastructure.pdf" target="_blank" rel="noopener">
+              AWS Network Infrastructure <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Network Firewall Getting Started.pdf" target="_blank" rel="noopener">
+              AWS Network Firewall – Getting Started <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Compute Services Overview.pdf" target="_blank" rel="noopener">
+              AWS Compute Services Overview <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Security Fundamentals.pdf" target="_blank" rel="noopener">
+              AWS Security Fundamentals <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Block Storage Services Getting Started.pdf" target="_blank" rel="noopener">
+              AWS Block Storage Services – Getting Started <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/AWS Object Storage Services Getting Started.pdf" target="_blank" rel="noopener">
+              AWS Object Storage Services – Getting Started <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Amazon EC2 Basics.pdf" target="_blank" rel="noopener">
+              Amazon EC2 Basics <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Build with Amazon EC2.pdf" target="_blank" rel="noopener">
+              Build with Amazon EC2 <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Amazon S3 Getting Started.pdf" target="_blank" rel="noopener">
+              Amazon S3 – Getting Started <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Amazon RDS Service Primer.pdf" target="_blank" rel="noopener">
+              Amazon RDS Service Primer <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Amazon CloudWatch Getting Started.pdf" target="_blank" rel="noopener">
+              Amazon CloudWatch – Getting Started <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Amazon Simple Notification Service (Amazon SNS) - Troubleshooting.pdf" target="_blank" rel="noopener">
+              Amazon SNS – Troubleshooting <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Application Load Balancer Getting Started.pdf" target="_blank" rel="noopener">
+              Application Load Balancer – Getting Started <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Elastic Load Balancing (ELB) - Troubleshooting.pdf" target="_blank" rel="noopener">
+              Elastic Load Balancing (ELB) – Troubleshooting <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Getting Started with AWS Auto Scaling.pdf" target="_blank" rel="noopener">
+              Getting Started with AWS Auto Scaling <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Deep Dive with Security AWS Identity and Access Management (IAM).pdf" target="_blank" rel="noopener">
+              Deep Dive: AWS IAM Security <small>AWS Training & Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/github.pdf" target="_blank" rel="noopener">
+              Git & GitHub <small>Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/React js.pdf" target="_blank" rel="noopener">
+              React.js <small>Certification</small>
+            </a>
+            <a class="cert-item" href="assets/certifications/Web developer intern.jpeg" target="_blank" rel="noopener">
+              Web Development Internship <small>Zentrixa Technologies</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-wrap section-block" id="contact">
+      <div class="contact-panel tilt-card fade-up">
+        <div class="card-inner">
+          <p class="eyebrow">05 / GET IN TOUCH</p>
+          <h2>Have a cloud challenge<br>in mind? <span>Let's connect.</span></h2>
+          <p class="contact-copy">
+            I’m interested in opportunities to learn, contribute, and grow in AWS and DevOps engineering.
+          </p>
+        </div>
+        <div class="contact-links card-inner">
+          <a href="mailto:kannanashokkumar19@gmail.com">
+            <span>Email me</span>
+            <strong>kannanashokkumar19@gmail.com ↗</strong>
+          </a>
+          <a href="tel:+918838319694">
+            <span>Call me</span>
+            <strong>+91 8838319694 ↗</strong>
+          </a>
+          <a href="assets/Kannan-A-Resume.pdf" target="_blank" rel="noopener">
+            <span>Want the details?</span>
+            <strong>View my résumé ↗</strong>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer section-wrap"><a class="brand" href="#home"><span class="brand-mark">K<span>.</span></span><span>KANNAN A</span></a><p>Designed with purpose. Built for what's next.</p><span>© <span id="year"></span> Kannan A</span></footer>
+
+  <!-- Footer -->
+  <footer class="footer section-wrap">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K<span>.</span></span>
+      <span>KANNAN A</span>
+    </a>
+    <p>Designed with purpose. Built for what's next.</p>
+    <span>© <span id="year"></span> Kannan A</span>
+  </footer>
+
+  <!-- 3D Scripts & Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="three-scene.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
