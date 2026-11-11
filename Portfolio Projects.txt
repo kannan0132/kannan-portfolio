@@ -1,0 +1,19 @@
+Portfolio Projects
+ 
+1.Secure AWS VPC & Scalable Web Application Deployment :
+		Architected and deployed a secure, highly available AWS infrastructure using Amazon VPC, public and private subnets, custom route tables, and NAT Gateway. Deployed web applications on EC2 instances in private subnets behind an Application Load Balancer, with Auto Scaling for scalability and fault tolerance. Configured Amazon EBS and EFS for persistent and shared storage, and implemented Security Groups and IAM roles to control access and secure communication between resources.
+
+2.AWS 3-Tier Scalable Web Application: 
+		Designed and deployed a highly available 3-tier web application on AWS with separate presentation, application, and database layers. Configured Amazon VPC, public and private subnets, EC2, Application Load Balancer, Auto Scaling, and Amazon RDS to achieve scalability, high availability, and fault tolerance. Implemented Security Groups and IAM roles to secure communication and access between application components.
+
+3.AWS VPC Infrastructure & Monitoring Project:
+		Designed and implemented a secure AWS VPC architecture using 192.168.1.0/24 CIDR, with multiple subnets supporting 2 EC2 servers, Amazon RDS MySQL, Amazon EFS, and an Application Load Balancer (ALB). Configured EFS for shared file access between EC2 instances and implemented Amazon CloudWatch monitoring for CPU utilization, memory usage, and disk utilization. Configured networking, security groups, routing, and resource connectivity to build a scalable and highly available cloud infrastructure.
+
+4.Cyber Crime Response System:
+		Developed a Cyber Crime Response System to provide an online platform for reporting cybercrime incidents and managing complaints. Designed a user-friendly interface to help users submit cybercrime reports and access relevant complaint-related information. Implemented a digital reporting workflow to streamline complaint submission, tracking, and response management. Focused on improving accessibility, simplifying cybercrime reporting, and supporting efficient communication between users and the response system.
+
+5.Online Quiz Maker:
+		Developed a full-stack web application that enables users to create, manage, and participate in online quizzes through an interactive platform. Implemented secure user registration and login using JWT authentication, allowing users to create multiple-choice quizzes with customizable questions and options. Integrated quiz-taking functionality with instant evaluation, score calculation, percentage results, and correct-answer feedback. Designed a responsive user interface and implemented backend APIs with database integration to manage users, quizzes, questions, and quiz attempts.
+
+6.College Alumni Automation System:
+		Developed a web-based College Alumni Automation System to establish communication and networking between current students, alumni, and college administrators. The system provides centralized alumni information management, allowing users to maintain profiles, access alumni details, share career opportunities, and stay updated on college events and activities. Implemented features to simplify alumni data management, improve student-alumni interactions, and support career networking and collaboration between former and current students.

@@ -187,8 +187,8 @@
         const strong = entry.target.querySelector('strong');
         if (strong) {
           const raw = strong.getAttribute('data-count') || strong.textContent.trim();
-          if (raw === '04' || raw === '4') {
-            animateCounter(strong, 4, '0');
+          if (raw === '06' || raw === '6' || raw === '04' || raw === '4') {
+            animateCounter(strong, 6, '0');
           } else if (raw.includes('10')) {
             animateCounter(strong, 10, '', '+');
           } else if (raw.includes('2026')) {

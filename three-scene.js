@@ -51,9 +51,9 @@
     const colors = new Float32Array(particleCount * 3);
     const velocities = [];
 
-    const color1 = new THREE.Color(0x70e1d1); // Teal / Cyan
-    const color2 = new THREE.Color(0x9aa8ff); // Lavender / Indigo
-    const color3 = new THREE.Color(0x4299e1); // AWS Cloud Blue
+    const color1 = new THREE.Color(0xe2e8f0); // Platinum / Silver
+    const color2 = new THREE.Color(0x94a3b8); // Slate / Titanium Grey
+    const color3 = new THREE.Color(0xffffff); // Starlight White
 
     const spreadX = 1400;
     const spreadY = 1200;
@@ -89,8 +89,8 @@
       const ctx = pCanvas.getContext('2d');
       const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
       grad.addColorStop(0, 'rgba(255,255,255,1)');
-      grad.addColorStop(0.3, 'rgba(112,225,209,0.8)');
-      grad.addColorStop(0.7, 'rgba(154,168,255,0.2)');
+      grad.addColorStop(0.3, 'rgba(226,232,240,0.85)');
+      grad.addColorStop(0.7, 'rgba(148,163,184,0.25)');
       grad.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -205,13 +205,19 @@
     const cloudCoreGroup = new THREE.Group();
     scene.add(cloudCoreGroup);
 
+    function updateCorePosition() {
+      const isDesktop = window.innerWidth > 992;
+      cloudCoreGroup.position.x = isDesktop ? -70 : 0;
+    }
+    updateCorePosition();
+
     // 1. Hologram Central Icosahedron (Cloud Core Node)
     const icosaGeo = new THREE.IcosahedronGeometry(36, 1);
     const icosaMat = new THREE.MeshBasicMaterial({
-      color: 0x70e1d1,
+      color: 0xe2e8f0,
       wireframe: true,
       transparent: true,
-      opacity: 0.65
+      opacity: 0.7
     });
     const icosaCore = new THREE.Mesh(icosaGeo, icosaMat);
     cloudCoreGroup.add(icosaCore);
@@ -219,10 +225,10 @@
     // 2. Inner Glowing Octahedron
     const octGeo = new THREE.OctahedronGeometry(22, 0);
     const octMat = new THREE.MeshBasicMaterial({
-      color: 0x9aa8ff,
+      color: 0x94a3b8,
       wireframe: true,
       transparent: true,
-      opacity: 0.8
+      opacity: 0.85
     });
     const octCore = new THREE.Mesh(octGeo, octMat);
     cloudCoreGroup.add(octCore);
@@ -230,9 +236,9 @@
     // 3. Holographic Orbital Rings
     const ring1Geo = new THREE.TorusGeometry(52, 1.2, 8, 48);
     const ring1Mat = new THREE.MeshBasicMaterial({
-      color: 0x70e1d1,
+      color: 0xcbd5e1,
       transparent: true,
-      opacity: 0.4
+      opacity: 0.45
     });
     const ring1 = new THREE.Mesh(ring1Geo, ring1Mat);
     ring1.rotation.x = Math.PI / 3;
@@ -240,9 +246,9 @@
 
     const ring2Geo = new THREE.TorusGeometry(62, 0.8, 8, 48);
     const ring2Mat = new THREE.MeshBasicMaterial({
-      color: 0x9aa8ff,
+      color: 0x64748b,
       transparent: true,
-      opacity: 0.3
+      opacity: 0.35
     });
     const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
     ring2.rotation.y = Math.PI / 4;
@@ -255,7 +261,7 @@
     for (let i = 0; i < satCount; i++) {
       const satGeo = new THREE.SphereGeometry(3.5, 8, 8);
       const satMat = new THREE.MeshBasicMaterial({
-        color: i % 2 === 0 ? 0x70e1d1 : 0xffb65d,
+        color: i % 2 === 0 ? 0xffffff : 0x94a3b8,
         wireframe: false
       });
       const sat = new THREE.Mesh(satGeo, satMat);
@@ -295,6 +301,7 @@
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
+      updateCorePosition();
     });
     resizeObserver.observe(parent);
 
